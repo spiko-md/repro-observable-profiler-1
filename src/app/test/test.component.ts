@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Subject } from 'rxjs';
+import { interval } from 'rxjs';
 
 
 
@@ -8,10 +8,10 @@ import { Subject } from 'rxjs';
 	templateUrl: './test.component.html'
 })
 export class TestComponent  {
-	obs;
+	sub;
 
 	constructor() {
-		this.obs = new Subject();
+		this.sub = interval(1000).subscribe(console.log);
 	}
 
 }
