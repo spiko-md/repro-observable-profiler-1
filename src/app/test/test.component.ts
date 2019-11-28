@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { interval } from 'rxjs';
 
 
 
@@ -7,11 +7,13 @@ import { Subject } from 'rxjs';
 	selector: 'app-test',
 	templateUrl: './test.component.html'
 })
-export class TestComponent  {
-	obs;
+export class TestComponent implements OnInit {
+	sub;
 
-	constructor() {
-		this.obs = new Subject();
+
+	ngOnInit(): void {
+		this.sub = interval(1000).subscribe(console.log);
 	}
+
 
 }

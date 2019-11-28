@@ -4,18 +4,18 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
-// import { Observable } from 'rxjs';
-// import { setup, track, printSubscribers } from 'observable-profiler';
+import { Observable } from 'rxjs';
+import { setup, track, printSubscribers } from 'observable-profiler';
 
 if (environment.production) {
 	enableProdMode();
 }
 
-// setup(Observable);
+setup(Observable);
 
 platformBrowserDynamic()
 	.bootstrapModule(AppModule)
-	/*
+
 	.then(ref => {
 		track();
 		(window as any).stopProfiler = () => {
@@ -23,8 +23,9 @@ platformBrowserDynamic()
 			const subscribers = track(false);
 			printSubscribers({
 				subscribers,
+				reportInnerSubscriptions: true,
 			});
 		};
 	})
-	*/
+
 	.catch (err => console.error(err));

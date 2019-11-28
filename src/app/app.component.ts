@@ -24,15 +24,18 @@ export class AppComponent {
 
 		// No output on repro test, errors in real project
 		printSubscribers({
+			reportInnerSubscriptions: true,
 			subscribers,
 			prefix: component.constructor.name,
 			timeout: 200,
 		});
 
+		//console.log('No output from printSubscribers');
+
 		// Printing 'subscribers' as the printSubscribers fn produces no output
-		subscribers.current().forEach(val => {
-			console.log(val);
-		});
+		// subscribers.current().forEach(val => {
+		//	console.log(val);
+		//});
 
 	}
 
