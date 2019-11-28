@@ -30,6 +30,7 @@ export class AppComponent {
 			timeout: 200,
 		});
 
+
 		//console.log('No output from printSubscribers');
 
 		// Printing 'subscribers' as the printSubscribers fn produces no output

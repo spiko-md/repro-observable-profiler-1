@@ -1,4 +1,6 @@
+
 import { Component, OnInit } from '@angular/core';
+
 import { interval } from 'rxjs';
 
 
@@ -7,6 +9,7 @@ import { interval } from 'rxjs';
 	selector: 'app-test',
 	templateUrl: './test.component.html'
 })
+
 export class TestComponent implements OnInit {
 	sub;
 
